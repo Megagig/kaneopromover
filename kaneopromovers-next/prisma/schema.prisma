@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================
+// Admin Users
+// ============================================
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+
+  @@map("admins")
+}
+
+// ============================================
+// Quote Requests
+// ============================================
+enum QuoteStatus {
+  PENDING
+  REVIEWED
+  QUOTED
+  BOOKED
+  COMPLETED
+  CANCELLED
+}
+
+model Quote {
+  id              String      @id @default(cuid())
+  bedroomTypeFrom String
+  bedroomTypeTo   String
+  movingDate      DateTime
+  firstName       String
+  lastName        String
+  email           String
+  phone           String
+  fromAddress     String
+  toAddress       String
+  fromCity        String
+  toCity          String
+  notes           String?
+  status          QuoteStatus @default(PENDING)
+  estimatedPrice  Float?
+  source          String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  booking Booking?
+
+  @@map("quotes")
+}
+
+// ============================================
+// Bookings
+// ============================================
+enum BookingStatus {
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+model Booking {
+  id          String        @id @default(cuid())
+  quoteId     String        @unique
+  quote       Quote         @relation(fields: [quoteId], references: [id])
+  scheduledAt DateTime
+  status      BookingStatus @default(CONFIRMED)
+  assignedTo  String?
+  notes       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("bookings")
+}
+
+// ============================================
+// Contact Messages
+// ============================================
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}
+
+// ============================================
+// Pricing Tiers
+// ============================================
+model Pricing {
+  id         String   @id @default(cuid())
+  label      String
+  basePrice  Float
+  hourlyRate Float
+  minHours   Int      @default(2)
+  isActive   Boolean  @default(true)
+  updatedAt  DateTime @updatedAt
+
+  @@map("pricing")
+}
