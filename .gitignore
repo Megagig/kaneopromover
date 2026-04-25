@@ -1,0 +1,67 @@
+# ------------------------------------
+# Node.js
+# ------------------------------------
+node_modules/
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm/
+.pnp.*
+.pnp.js
+
+# ------------------------------------
+# Environment Variables
+# (Very important: NEVER commit .env)
+# ------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ------------------------------------
+# Logs
+# ------------------------------------
+logs/
+*.log
+logs/*.log
+logs/*.txt
+*.pid
+*.seed
+*.pid.lock
+
+# ------------------------------------
+# OS / System files
+# ------------------------------------
+.DS_Store
+Thumbs.db
+.fseventsd
+.idea/
+.vscode/
+*.swp
+
+# ------------------------------------
+# Build / Cache / Coverage
+# ------------------------------------
+dist/
+build/
+coverage/
+.cache/
+.nyc_output/
+.tmp/
+temp/
+
+# ------------------------------------
+# EJS cache (rare but safe to ignore)
+# ------------------------------------
+*.ejs.cache
+
+# ------------------------------------
+# Optional: Uploads / Storage Files
+# (If you store images locally in /uploads)
+# ------------------------------------
+uploads/
+storage/
