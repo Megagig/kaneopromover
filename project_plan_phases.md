@@ -813,7 +813,7 @@ export const cities = [
 
 ### 7.5 — Technical SEO Files
 
-**`public/robots.txt`**
+**`public/robots.txt`** ✅
 ```
 User-agent: *
 Allow: /
@@ -823,9 +823,9 @@ Disallow: /success
 Sitemap: https://www.kaneopromovers.com/sitemap.xml
 ```
 
-**`app/sitemap.ts`** (dynamic, auto-generated)
-- [ ] Returns all 14+ page URLs with lastmod, changefreq, priority
-- [ ] Auto-updates when new city pages are added
+**`app/sitemap.ts`** (dynamic, auto-generated) ✅
+- [x] Returns all 14+ page URLs with lastmod, changefreq, priority
+- [x] Auto-updates when new city pages are added
 
 **`next.config.ts` Headers** ✅ (already configured)
 ```typescript
@@ -859,7 +859,7 @@ headers: [
 ### 8.1 — GA4 Integration
 - [x] Add GA4 `<Script>` in `app/layout.tsx` using `next/script` with `strategy="afterInteractive"`
 - [x] Measurement ID stored in `NEXT_PUBLIC_GA_ID` env variable
-- [ ] Create `lib/utils/gtag.ts` helper for event tracking
+- [x] Create `lib/utils/gtag.ts` helper for event tracking
 - [ ] Track conversions:
   - `quote_form_submitted` — fire on `/success` page load
   - `phone_click` — fire on any `tel:` link click
