@@ -337,8 +337,8 @@ enum BookingStatus {
 > **Goal:** Create the Next.js project with all tooling configured
 
 ### 1.1 — Initialize Project
-- [ ] Run: `npx create-next-app@latest kaneopromovers-next --typescript --tailwind --eslint --app --src-dir=false --import-alias="@/*"`
-- [ ] Install core dependencies:
+- [x] Run: `npx create-next-app@latest kaneopromovers-next --typescript --tailwind --eslint --app --src-dir=false --import-alias="@/*"`
+- [x] Install core dependencies:
   ```bash
   npm install @prisma/client prisma
   npm install next-auth@beta
@@ -354,11 +354,11 @@ enum BookingStatus {
   npm install date-fns
   npm install recharts
   ```
-- [ ] Run: `npx prisma init`
-- [ ] Configure `.env.local` with all required variables (see Phase 7)
+- [x] Run: `npx prisma init`
+- [x] Configure `.env.local` with all required variables (see Phase 7)
 
 ### 1.2 — Tailwind Configuration
-- [ ] Update `tailwind.config.ts` with custom design tokens:
+- [x] Update `tailwind.config.ts` with custom design tokens:
   ```typescript
   theme: {
     extend: {
@@ -378,27 +378,27 @@ enum BookingStatus {
     }
   }
   ```
-- [ ] Add CSS variables for dark/light mode in `globals.css`
-- [ ] Install fonts via `next/font/google` in `app/layout.tsx`
+- [x] Add CSS variables for dark/light mode in `globals.css`
+- [x] Install fonts via `next/font/google` in `app/layout.tsx`
 
 ### 1.3 — Next.js Configuration
-- [ ] Configure `next.config.ts`:
+- [x] Configure `next.config.ts`:
   - Enable image optimization for `kaneopromovers.com` domain
   - Add all 301 redirects from old `.html` URLs to new clean URLs
   - Add security headers
   - Configure `images.formats: ['image/avif', 'image/webp']`
 
 ### 1.4 — Theme Provider Setup
-- [ ] Wrap app in `next-themes` ThemeProvider in `app/layout.tsx`
-- [ ] Create `ThemeToggle.tsx` button component (sun/moon icon toggle)
-- [ ] Set `defaultTheme="system"` with `enableSystem`
+- [x] Wrap app in `next-themes` ThemeProvider in `app/layout.tsx`
+- [x] Create `ThemeToggle.tsx` button component (sun/moon icon toggle)
+- [x] Set `defaultTheme="system"` with `enableSystem`
 
 ### 1.5 — Database Setup
-- [ ] Set up PostgreSQL database (local or Supabase/Neon for production)
-- [ ] Add `DATABASE_URL` to `.env.local`
+- [x] Set up PostgreSQL database (local or Supabase/Neon for production)
+- [x] Add `DATABASE_URL` to `.env.local`
 - [ ] Run `npx prisma db push` to create tables
-- [ ] Run `npx prisma generate` to generate client
-- [ ] Seed initial admin user and pricing data
+- [x] Run `npx prisma generate` to generate client
+- [x] Seed initial admin user and pricing data (seed script created)
 
 ---
 
@@ -408,42 +408,42 @@ enum BookingStatus {
 
 ### 2.1 — TopBar Component
 > Matches current site's top strip with phone + email
-- [ ] Create `components/layout/TopBar.tsx`
-- [ ] Content: phone `+1(587)-378-5954` (with `tel:` link + GA4 click tracking), email `info@kaneopromovers.com`, Canada flag
-- [ ] Mobile: hidden on mobile (`hidden md:flex`)
-- [ ] Dark/light mode responsive background
-- [ ] Yellow accent color for phone number
+- [x] Create `components/layout/TopBar.tsx`
+- [x] Content: phone `+1(587)-378-5954` (with `tel:` link + GA4 click tracking), email `info@kaneopromovers.com`, Canada flag
+- [x] Mobile: hidden on mobile (`hidden md:flex`)
+- [x] Dark/light mode responsive background
+- [x] Yellow accent color for phone number
 
 ### 2.2 — Navbar Component
-- [ ] Create `components/layout/Navbar.tsx` as a Client Component (`'use client'`)
-- [ ] **Logo:** Show `logo-light.jpg` in light mode, `logo-dark.png` in dark mode, using `next/image`
-- [ ] **Navigation links:**
+- [x] Create `components/layout/Navbar.tsx` as a Client Component (`'use client'`)
+- [x] **Logo:** Show `logo-light.jpg` in light mode, `logo-dark.png` in dark mode, using `next/image`
+- [x] **Navigation links:**
   - Home → `/`
   - About Us → `/about`
   - Services (dropdown) → all 8 service types linking to `/moving-services`
   - Locations (dropdown) → all 8 city pages
   - Contact → `/contact`
   - **Free Quote** → `/quote` (yellow CTA button, primary style)
-- [ ] **Mobile:** hamburger menu with smooth slide-down drawer
-- [ ] **Sticky:** `position: sticky, top: 0, z-50`
-- [ ] **Scroll effect:** transparent with border-bottom on scroll
-- [ ] **Active link:** yellow underline on current page link
-- [ ] Include `ThemeToggle` button in nav
+- [x] **Mobile:** hamburger menu with smooth slide-down drawer
+- [x] **Sticky:** `position: sticky, top: 0, z-50`
+- [x] **Scroll effect:** transparent with border-bottom on scroll
+- [x] **Active link:** yellow underline on current page link
+- [x] Include `ThemeToggle` button in nav
 
 ### 2.3 — Footer Component
-- [ ] Create `components/layout/Footer.tsx`
-- [ ] Match current site footer structure:
+- [x] Create `components/layout/Footer.tsx`
+- [x] Match current site footer structure:
   - Column 1: Logo + company description + "Serving Alberta"
   - Column 2: Contact Info (address, email, phone)
   - Column 3: Quick Links (Home, About, Services, Quote, Contact)
   - Column 4: Locations (all 8 cities)
   - Column 5: Services list
-- [ ] Bottom bar: Copyright 2025 Kaneo Pro Movers + social icons
+- [x] Bottom bar: Copyright 2025 Kaneo Pro Movers + social icons
 - [ ] NAP schema in footer (matching LocalBusiness schema)
-- [ ] Dark background footer with yellow accent links
+- [x] Dark background footer with yellow accent links
 
 ### 2.4 — Root Layout
-- [ ] Update `app/layout.tsx` with:
+- [x] Update `app/layout.tsx` with:
   - Plus Jakarta Sans + Inter fonts via `next/font/google`
   - `ThemeProvider` wrapper
   - `TopBar` + `Navbar` + `Footer` (on all public pages)
@@ -461,59 +461,59 @@ enum BookingStatus {
 **Sections to build (in order):**
 
 **A. Hero Slider**
-- [ ] 3-slide carousel matching current site's 3 hero states:
+- [x] 3-slide carousel matching current site's 3 hero states:
   1. "KANEO PRO MOVERS — Movers With Confidence"
   2. "We Are Reliable and Efficient — Moving Company"
   3. "Professional Movers and fair price — Your 1st Choice"
-- [ ] Each slide: full-viewport height, dark overlay, background image, centered text
-- [ ] CTA buttons on each slide: "Send A Direct Email" + "Call +1(587)-378-5954" + "GET FREE A QUOTE" (yellow, primary)
-- [ ] Auto-play with 5s interval, prev/next arrows, dot indicators
-- [ ] Built with `framer-motion` AnimatePresence
+- [x] Each slide: full-viewport height, dark overlay, background image, centered text
+- [x] CTA buttons on each slide: "Send A Direct Email" + "Call +1(587)-378-5954" + "GET FREE A QUOTE" (yellow, primary)
+- [x] Auto-play with 5s interval, prev/next arrows, dot indicators
+- [x] Built with `framer-motion` AnimatePresence
 
 **B. Services Grid**
-- [ ] 4-card grid: Residential Moving, Commercial Moving, Packing & Unpacking, Loading/Unloading
-- [ ] Each card: icon (Lucide), title, description, "Learn More" link
-- [ ] Hover: card lifts with yellow accent border
+- [x] 4-card grid: Residential Moving, Commercial Moving, Packing & Unpacking, Loading/Unloading
+- [x] Each card: icon (Lucide), title, description, "Learn More" link
+- [x] Hover: card lifts with yellow accent border
 
 **C. About Section**
-- [ ] 2-column layout: text left, image right
-- [ ] "What Drives Us To Deliver Excellence!" heading
-- [ ] All 6 bullet points from original site
-- [ ] "About Us" CTA button → `/about`
-- [ ] Stats row: 99% Satisfaction, X+ Moves, 5-Star Rating, 24/7 Support
+- [x] 2-column layout: text left, image right
+- [x] "What Drives Us To Deliver Excellence!" heading
+- [x] All 6 bullet points from original site
+- [x] "About Us" CTA button → `/about`
+- [x] Stats row: 99% Satisfaction, X+ Moves, 5-Star Rating, 24/7 Support
 
 **D. Quick Quote Widget**
-- [ ] Inline quote form from homepage (bedroom type from, bedroom type to, date)
-- [ ] Background: yellow section with dark text
-- [ ] On submit: redirect to `/quote` with pre-filled values via URL params
+- [x] Inline quote form from homepage (bedroom type from, bedroom type to, date)
+- [x] Background: yellow section with dark text
+- [x] On submit: redirect to `/quote` with pre-filled values via URL params
 
 **E. Testimonials Section**
-- [ ] "We Are 5-Star Moving Company" heading
-- [ ] Carousel of 3–5 review cards
-- [ ] Star ratings (5 yellow stars each)
-- [ ] Customer name + city
+- [x] "We Are 5-Star Moving Company" heading
+- [x] Carousel of 3–5 review cards
+- [x] Star ratings (5 yellow stars each)
+- [x] Customer name + city
 
 **F. City Coverage Section**
-- [ ] "Areas We Serve" heading
-- [ ] Grid of city cards with links to each city page
-- [ ] Cities: Airdrie, Calgary, Crossfield, Carstairs, Chestermere, Cochrane, Okotoks, Olds
+- [x] "Areas We Serve" heading
+- [x] Grid of city cards with links to each city page
+- [x] Cities: Airdrie, Calgary, Crossfield, Carstairs, Chestermere, Cochrane, Okotoks, Olds
 
 **G. FAQ Section**
-- [ ] Accordion-style FAQ
-- [ ] 5 questions from SEO plan
+- [x] Accordion-style FAQ
+- [x] 5 questions from SEO plan
 
 ### 3.2 — About Page (`app/about/page.tsx`)
-- [ ] Breadcrumb: Home > About Us
-- [ ] Hero banner with page title
-- [ ] About image (`assets/img/about-img.jpg` → `public/images/about.jpg`)
-- [ ] "Reliable And Express Moving Services" section with full body text
-- [ ] "Why Choose Us" section
-- [ ] Vision / Mission / Values tabs (matching current 3-tab layout)
-- [ ] Team or stats section
+- [x] Breadcrumb: Home > About Us
+- [x] Hero banner with page title
+- [x] About image (`assets/img/about-img.jpg` → `public/images/about.jpg`)
+- [x] "Reliable And Express Moving Services" section with full body text
+- [x] "Why Choose Us" section
+- [x] Vision / Mission / Values tabs (matching current 3-tab layout)
+- [x] Team or stats section
 
 ### 3.3 — Services Page (`app/moving-services/page.tsx`)
-- [ ] Breadcrumb: Home > Services
-- [ ] All 8 service cards:
+- [x] Breadcrumb: Home > Services
+- [x] All 8 service cards:
   1. Local Movers
   2. Long Distance Moving
   3. Residential Moving
@@ -522,9 +522,9 @@ enum BookingStatus {
   6. Loading or Unloading
   7. Heavy Item Moving
   8. Furniture Moving
-- [ ] "From Start To Finish" process section
-- [ ] 6 feature items: Fast & Efficient, Professional Packing, Safe Transportation, Unpacking, 24/7 Support, Warehouse Storage
-- [ ] CTA to `/quote`
+- [x] "From Start To Finish" process section
+- [x] 6 feature items: Fast & Efficient, Professional Packing, Safe Transportation, Unpacking, 24/7 Support, Warehouse Storage
+- [x] CTA to `/quote`
 
 ### 3.4 — Service Detail Page (`app/moving-services/[service]/page.tsx`)
 - [ ] Dynamic route for each service
@@ -533,9 +533,9 @@ enum BookingStatus {
 - [ ] CTA widget (mini quote form)
 
 ### 3.5 — Quote Page (`app/quote/page.tsx`)
-- [ ] Breadcrumb: Home > Get A Free Quote
+- [x] Breadcrumb: Home > Get A Free Quote
 - [ ] Hero image (quote2.png + quote-img.jpg)
-- [ ] Full quote form:
+- [x] Full quote form:
   - Bedroom type (from) — dropdown with all 11 options
   - Bedroom type (to) — dropdown with all 11 options
   - Moving date — date picker
@@ -547,47 +547,49 @@ enum BookingStatus {
   - From city, To city
   - Additional notes (textarea)
 - [ ] Price estimate display (calculated from Pricing table in DB)
-- [ ] Submit → calls `/api/quote` → sends email via Resend → redirects to `/success`
+- [x] Submit → calls `/api/quote` → sends email via Resend → redirects to `/success`
 
 ### 3.6 — Success Page (`app/success/page.tsx`)
-- [ ] Confirmation message with green checkmark icon
-- [ ] "We'll contact you within 2 hours" message
-- [ ] Company phone number prominent
-- [ ] "Return to Homepage" button
-- [ ] GA4 conversion event fired on page load
+- [x] Confirmation message with green checkmark icon
+- [x] "We'll contact you within 2 hours" message
+- [x] Company phone number prominent
+- [x] "Return to Homepage" button
+- [x] GA4 conversion event fired on page load
 
 ### 3.7 — Contact Page (`app/contact/page.tsx`)
-- [ ] Breadcrumb: Home > Contact
-- [ ] 3 info cards: Location, Call/Text, Email
-- [ ] Contact message form: Name, Email, Phone, Subject, Message
-- [ ] Submit → calls `/api/contact` → email to admin via Resend
+- [x] Breadcrumb: Home > Contact
+- [x] 3 info cards: Location, Call/Text, Email
+- [x] Contact message form: Name, Email, Phone, Subject, Message
+- [x] Submit → calls `/api/contact` → email to admin via Resend
 - [ ] Google Maps embed (optional — static map image acceptable)
 
 ### 3.8 — City Pages (8 pages)
 > Use a shared `CityPage` component with per-city data from `lib/data/cityData.ts`
 
 **Pages:**
-- [ ] `app/locations/airdrie/page.tsx`
-- [ ] `app/locations/calgary/page.tsx`
-- [ ] `app/locations/crossfield/page.tsx`
-- [ ] `app/locations/carstairs/page.tsx`
-- [ ] `app/locations/chestermere/page.tsx`
-- [ ] `app/locations/cochrane/page.tsx`
-- [ ] `app/locations/okotoks/page.tsx`
-- [ ] `app/locations/olds/page.tsx` ← NEW
+- [x] `app/locations/airdrie/page.tsx`
+- [x] `app/locations/calgary/page.tsx`
+- [x] `app/locations/crossfield/page.tsx`
+- [x] `app/locations/carstairs/page.tsx`
+- [x] `app/locations/chestermere/page.tsx`
+- [x] `app/locations/cochrane/page.tsx`
+- [x] `app/locations/okotoks/page.tsx`
+- [x] `app/locations/olds/page.tsx` ← NEW
+
+> Note: Implemented as dynamic route `app/locations/[city]/page.tsx` with `generateStaticParams`
 
 **Each city page contains:**
-- [ ] Breadcrumb: Home > Locations > [City]
-- [ ] Hero with city photo + "Ready To Move in [City]?"
-- [ ] Body text from original site (unique per city)
-- [ ] "Why Choose Kaneo Pro Movers in [City]?" bullet list
-- [ ] 4 service cards (Residential, Commercial, Packing, Loading)
+- [x] Breadcrumb: Home > Locations > [City]
+- [x] Hero with city photo + "Ready To Move in [City]?"
+- [x] Body text from original site (unique per city)
+- [x] "Why Choose Kaneo Pro Movers in [City]?" bullet list
+- [x] 4 service cards (Residential, Commercial, Packing, Loading)
 - [ ] Testimonials section (reused component)
-- [ ] Internal links to 3 other city pages
-- [ ] CTA to `/quote?city=[city]`
-- [ ] `generateMetadata()` with city-specific title, description, canonical, OG tags
-- [ ] LocalBusiness JSON-LD schema (city-specific)
-- [ ] FAQ schema (city-specific)
+- [x] Internal links to 3 other city pages
+- [x] CTA to `/quote?city=[city]`
+- [x] `generateMetadata()` with city-specific title, description, canonical, OG tags
+- [x] LocalBusiness JSON-LD schema (city-specific)
+- [x] FAQ schema (city-specific)
 
 ---
 
@@ -718,14 +720,14 @@ enum BookingStatus {
 > **Timeline:** Day 5
 
 ### 6.1 — Setup Resend
-- [ ] Install: `npm install resend`
+- [x] Install: `npm install resend`
 - [ ] Create account at https://resend.com
 - [ ] Verify domain `kaneopromovers.com` in Resend DNS settings
-- [ ] Add `RESEND_API_KEY` to `.env.local`
+- [x] Add `RESEND_API_KEY` to `.env.local`
 - [ ] Create `lib/email/resend.ts` with Resend client
 
 ### 6.2 — Email Templates (React Email)
-- [ ] Install: `npm install @react-email/components react-email`
+- [x] Install: `npm install @react-email/components react-email`
 - [ ] **Customer Quote Confirmation Email:**
   - Subject: "Your Moving Quote Request — Kaneo Pro Movers"
   - Body: Customer name, move details, estimated price range, "We'll call you within 2 hours", company phone
@@ -748,7 +750,7 @@ enum BookingStatus {
 > **Goal:** Full technical + on-page + local SEO
 
 ### 7.1 — Root Metadata (`app/layout.tsx`)
-- [ ] Default metadata object:
+- [x] Default metadata object:
   ```typescript
   export const metadata: Metadata = {
     metadataBase: new URL('https://www.kaneopromovers.com'),
@@ -761,13 +763,14 @@ enum BookingStatus {
   ```
 
 ### 7.2 — Per-Page Metadata
-- [ ] Homepage: title, description, OG image, canonical
-- [ ] About: title, description, canonical
-- [ ] Services: title, description, canonical
-- [ ] Quote: title, description, noindex (quote thank-you = success page noindex)
-- [ ] All 8 city pages: `generateMetadata()` from `cityData.ts`
+- [x] Homepage: title, description, OG image, canonical
+- [x] About: title, description, canonical
+- [x] Services: title, description, canonical
+- [x] Quote: title, description, noindex (quote thank-you = success page noindex)
+- [x] All 8 city pages: `generateMetadata()` from `cityData.ts`
 
 ### 7.3 — City Data (`lib/data/cityData.ts`)
+- [x] Complete data for all 8 cities with slug, metaTitle, metaDescription, canonicalUrl, h1, heroImage, bodyText, whyChooseUs, nearbyAreas, keywords, faq
 ```typescript
 // Complete data for all 8 cities
 export const cities = [
@@ -795,18 +798,18 @@ export const cities = [
 ### 7.4 — Structured Data Components
 
 **LocalBusiness Schema (`components/seo/LocalBusinessSchema.tsx`)**
-- [ ] MovingCompany type
-- [ ] Includes: name, url, logo, telephone, address, areaServed (all 7 cities), services, priceRange, openingHours
-- [ ] City-specific version for city pages
+- [x] MovingCompany type
+- [x] Includes: name, url, logo, telephone, address, areaServed (all 7 cities), services, priceRange, openingHours
+- [x] City-specific version for city pages
 
 **FAQ Schema (`components/seo/FAQSchema.tsx`)**
-- [ ] FAQPage type
-- [ ] Rendered on: homepage, airdrie page, calgary page
-- [ ] City-specific questions per city page
+- [x] FAQPage type
+- [x] Rendered on: homepage, airdrie page, calgary page
+- [x] City-specific questions per city page
 
 **Breadcrumb Schema (`components/seo/BreadcrumbSchema.tsx`)**
-- [ ] BreadcrumbList type
-- [ ] Every page except homepage
+- [x] BreadcrumbList type
+- [x] Every page except homepage
 
 ### 7.5 — Technical SEO Files
 
@@ -824,7 +827,7 @@ Sitemap: https://www.kaneopromovers.com/sitemap.xml
 - [ ] Returns all 14+ page URLs with lastmod, changefreq, priority
 - [ ] Auto-updates when new city pages are added
 
-**`next.config.ts` Headers**
+**`next.config.ts` Headers** ✅ (already configured)
 ```typescript
 headers: [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -835,10 +838,10 @@ headers: [
 ```
 
 ### 7.6 — Image Optimization
-- [ ] Convert all images to WebP/AVIF using `next/image`
-- [ ] Add `priority` prop to hero images (LCP optimization)
-- [ ] Add `alt` text to every image (descriptive + keyword-rich)
-- [ ] Add `width` + `height` to all images (prevent layout shift)
+- [x] Convert all images to WebP/AVIF using `next/image`
+- [x] Add `priority` prop to hero images (LCP optimization)
+- [x] Add `alt` text to every image (descriptive + keyword-rich)
+- [x] Add `width` + `height` to all images (prevent layout shift)
 - [ ] Compress originals before adding to `public/`
 
 ### 7.7 — Performance Targets
@@ -854,8 +857,8 @@ headers: [
 > **Timeline:** Day 7 (after deployment)
 
 ### 8.1 — GA4 Integration
-- [ ] Add GA4 `<Script>` in `app/layout.tsx` using `next/script` with `strategy="afterInteractive"`
-- [ ] Measurement ID stored in `NEXT_PUBLIC_GA_ID` env variable
+- [x] Add GA4 `<Script>` in `app/layout.tsx` using `next/script` with `strategy="afterInteractive"`
+- [x] Measurement ID stored in `NEXT_PUBLIC_GA_ID` env variable
 - [ ] Create `lib/utils/gtag.ts` helper for event tracking
 - [ ] Track conversions:
   - `quote_form_submitted` — fire on `/success` page load
@@ -864,7 +867,7 @@ headers: [
   - `contact_form_submitted` — fire on contact form success
 
 ### 8.2 — Google Search Console
-- [ ] Keep `public/google3f079748702b6260.html` in `public/` folder
+- [x] Keep `public/google3f079748702b6260.html` in `public/` folder
 - [ ] Add `verification.google` to root metadata
 - [ ] Submit new sitemap after first deployment
 
@@ -878,13 +881,13 @@ headers: [
 > Implemented throughout all phases
 
 ### Implementation Pattern
-- [ ] CSS variables defined in `globals.css` under `:root` (light) and `.dark` (dark)
-- [ ] All components use `bg-background`, `text-text-primary`, `border-border` Tailwind tokens
-- [ ] `ThemeToggle` button in Navbar — sun icon (light mode) / moon icon (dark mode)
-- [ ] `next-themes` handles `localStorage` persistence + system preference detection
-- [ ] No flash of wrong theme on load (use `suppressHydrationWarning` on `<html>`)
-- [ ] Images: logo changes with theme (`useTheme()` hook)
-- [ ] Yellow primary color stays the same in both modes
+- [x] CSS variables defined in `globals.css` under `:root` (light) and `.dark` (dark)
+- [x] All components use `bg-background`, `text-text-primary`, `border-border` Tailwind tokens
+- [x] `ThemeToggle` button in Navbar — sun icon (light mode) / moon icon (dark mode)
+- [x] `next-themes` handles `localStorage` persistence + system preference detection
+- [x] No flash of wrong theme on load (use `suppressHydrationWarning` on `<html>`)
+- [x] Images: logo changes with theme (`useTheme()` hook)
+- [x] Yellow primary color stays the same in both modes
 
 ---
 

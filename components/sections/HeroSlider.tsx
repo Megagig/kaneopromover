@@ -23,6 +23,16 @@ const slides = [
     subheadline: "Your 1st Choice",
     bg: "/images/hero-3.jpg",
   },
+  {
+    headline: "Safe and Secure Moving",
+    subheadline: "Your Belongings Are in Good Hands",
+    bg: "/images/slider/4444.jpg",
+  },
+  {
+    headline: "Serving Airdrie, Calgary & Alberta",
+    subheadline: "Local Movers You Can Trust",
+    bg: "/images/slider/4.jpg",
+  },
 ];
 
 const variants = {
