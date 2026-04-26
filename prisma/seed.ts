@@ -2,11 +2,11 @@ import { config } from "dotenv";
 config({ path: ".env.local" });
 
 import { PrismaClient } from "../app/generated/prisma/client";
-import { PrismaNeon } from "@prisma/adapter-neon";
+import { PrismaNeonHttp } from "@prisma/adapter-neon";
 import bcrypt from "bcryptjs";
 
 const connectionString = process.env.DATABASE_URL!;
-const adapter = new PrismaNeon({ connectionString });
+const adapter = new PrismaNeonHttp(connectionString, { arrayMode: false, fullResults: true });
 const prisma = new PrismaClient({ adapter });
 
 async function main() {

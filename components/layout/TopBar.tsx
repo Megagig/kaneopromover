@@ -33,7 +33,7 @@ export default function TopBar() {
             alt="Canadian flag"
             width={20}
             height={15}
-            className="object-contain"
+            style={{ width: "20px", height: "auto" }}
           />
           <span className="text-white">Canada</span>
           <span className="text-primary">Serving Alberta</span>
