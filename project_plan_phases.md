@@ -598,11 +598,11 @@ enum BookingStatus {
 > **Goal:** Full admin dashboard with authentication
 
 ### 4.1 — Authentication (NextAuth.js)
-- [ ] Configure NextAuth with Credentials provider in `lib/auth/authOptions.ts`
-- [ ] Admin login validates against `Admin` table in DB (bcrypt password comparison)
-- [ ] Session: JWT strategy, 24-hour expiry
+- [x] Configure NextAuth with Credentials provider in `lib/auth/auth.ts`
+- [x] Admin login validates against `Admin` table in DB (bcrypt password comparison)
+- [x] Session: JWT strategy, 24-hour expiry
 - [ ] Create `middleware.ts` to protect all `/admin/*` routes — redirect to `/admin/login` if not authenticated
-- [ ] Create seed script to create first admin: `npx prisma db seed`
+- [x] Create seed script to create first admin: `npx prisma db seed`
 
 ### 4.2 — Admin Login Page (`app/admin/login/page.tsx`)
 - [ ] Standalone page (no TopBar/Navbar/Footer — just the admin login)
@@ -685,10 +685,10 @@ enum BookingStatus {
 // 5. Send admin notification email via Resend
 // 6. Return { success: true, quoteId, estimatedPrice }
 ```
-- [ ] Input validation: all required fields, date must be future
-- [ ] Price calculation: look up `Pricing` by bedroom type, apply base + hourly estimate
-- [ ] Customer email: "We received your quote request" + estimated price + contact details
-- [ ] Admin email: full quote details + customer contact + link to admin panel
+- [x] Input validation: all required fields, date must be future
+- [x] Price calculation: look up `Pricing` by bedroom type, apply base + hourly estimate
+- [x] Customer email: "We received your quote request" + estimated price + contact details
+- [x] Admin email: full quote details + customer contact + link to admin panel
 
 ### 5.2 — Contact API (`app/api/contact/route.ts`)
 ```typescript
@@ -700,19 +700,19 @@ enum BookingStatus {
 ```
 
 ### 5.3 — Bookings API (`app/api/bookings/route.ts`)
-- [ ] `GET /api/bookings` — list all (admin auth required)
-- [ ] `POST /api/bookings` — create from quote (admin auth required)
-- [ ] `PATCH /api/bookings/[id]` — update status/assignment
+- [x] `GET /api/bookings` — list all (admin auth required)
+- [x] `POST /api/bookings` — create from quote (admin auth required)
+- [x] `PATCH /api/bookings/[id]` — update status/assignment
 - [ ] `DELETE /api/bookings/[id]` — cancel
 
 ### 5.4 — Leads API (`app/api/leads/route.ts`)
-- [ ] `GET /api/leads` — list all quotes (admin auth required)
-- [ ] `PATCH /api/leads/[id]` — update status
-- [ ] `POST /api/leads/[id]/send-quote` — trigger quote email via Resend
+- [x] `GET /api/leads` — list all quotes (admin auth required)
+- [x] `PATCH /api/leads/[id]` — update status
+- [x] `POST /api/leads/[id]/send-quote` — trigger quote email via Resend
 
 ### 5.5 — Pricing API (`app/api/pricing/route.ts`)
-- [ ] `GET /api/pricing` — list all tiers (public, used by quote form)
-- [ ] `PATCH /api/pricing/[id]` — update tier (admin auth required)
+- [x] `GET /api/pricing` — list all tiers (public, used by quote form)
+- [x] `PATCH /api/pricing/[id]` — update tier (admin auth required)
 
 ---
 
@@ -724,22 +724,22 @@ enum BookingStatus {
 - [ ] Create account at https://resend.com
 - [ ] Verify domain `kaneopromovers.com` in Resend DNS settings
 - [x] Add `RESEND_API_KEY` to `.env.local`
-- [ ] Create `lib/email/resend.ts` with Resend client
+- [x] Create `lib/email/resend.ts` with Resend client
 
 ### 6.2 — Email Templates (React Email)
 - [x] Install: `npm install @react-email/components react-email`
-- [ ] **Customer Quote Confirmation Email:**
+- [x] **Customer Quote Confirmation Email:**
   - Subject: "Your Moving Quote Request — Kaneo Pro Movers"
   - Body: Customer name, move details, estimated price range, "We'll call you within 2 hours", company phone
   - Kaneo Pro branded header (yellow accent)
-- [ ] **Admin Quote Notification Email:**
+- [x] **Admin Quote Notification Email:**
   - Subject: "🔔 New Quote Request — [Customer Name]"
   - Body: All form fields, customer phone (click-to-call), link to admin panel
   - Sent to: `info@kaneopromovers.com`
-- [ ] **Contact Form Notification Email:**
+- [x] **Contact Form Notification Email:**
   - Subject: "New Contact Message — [Subject]"
   - Body: Name, email, phone, message, timestamp
-- [ ] **Booking Confirmation Email:**
+- [x] **Booking Confirmation Email:**
   - Subject: "Your Move is Confirmed! — Kaneo Pro Movers"
   - Body: Move date, time, what to expect, contact details
 
