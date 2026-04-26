@@ -626,10 +626,10 @@ enum BookingStatus {
 
 ### 4.4 — Dashboard Page (`app/admin/dashboard/page.tsx`)
 **Stat Cards (top row):**
-- [ ] Total Quotes (this month)
-- [ ] Pending Quotes
-- [ ] Confirmed Bookings
-- [ ] New Messages (unread contact forms)
+- [x] Total Quotes (this month)
+- [x] Pending Quotes
+- [x] Confirmed Bookings
+- [x] New Messages (unread contact forms)
 
 **Charts:**
 - [ ] Quote submissions over last 30 days (line chart via Recharts)
@@ -637,32 +637,32 @@ enum BookingStatus {
 - [ ] Quote status breakdown (pie chart)
 
 **Recent Activity:**
-- [ ] Last 5 quotes (table: name, city, date, status, action)
-- [ ] Last 5 contact messages
+- [x] Last 5 quotes (table: name, city, date, status, action)
+- [x] Last 5 contact messages
 
 ### 4.5 — Bookings Page (`app/admin/bookings/page.tsx`)
-- [ ] Table: all bookings with columns: Customer, From→To, Scheduled Date, Status, Assigned To, Actions
-- [ ] Filter by status (Confirmed, In Progress, Completed, Cancelled)
+- [x] Table: all bookings with columns: Customer, From→To, Scheduled Date, Status, Assigned To, Actions
+- [x] Filter by status (Confirmed, In Progress, Completed, Cancelled)
 - [ ] Search by customer name or city
 - [ ] Click booking row → `/admin/bookings/[id]` for full details
-- [ ] Update status dropdown inline
+- [x] Update status dropdown inline
 - [ ] Assign mover field
 - [ ] Export to CSV button
 
 ### 4.6 — Leads / Quotes Page (`app/admin/leads/page.tsx`)
-- [ ] Table: all quotes with columns: Name, Email, Phone, Bedroom Type, Moving Date, From City, To City, Source, Status, Received At
-- [ ] Status update: PENDING → REVIEWED → QUOTED → BOOKED
-- [ ] "Convert to Booking" button on quoted leads
-- [ ] "Send Quote Email" button → sends pricing via Resend
-- [ ] Filter: by status, by city, by date range
-- [ ] Unread indicator (highlight new submissions)
+- [x] Table: all quotes with columns: Name, Email, Phone, Bedroom Type, Moving Date, From City, To City, Source, Status, Received At
+- [x] Status update: PENDING → REVIEWED → QUOTED → BOOKED
+- [x] "Convert to Booking" button on quoted leads
+- [x] "Send Quote Email" button → sends pricing via Resend
+- [x] Filter: by status, by city, by date range
+- [x] Unread indicator (highlight new submissions)
 
 ### 4.7 — Pricing Page (`app/admin/pricing/page.tsx`)
-- [ ] Table of all pricing tiers (from `Pricing` table)
-- [ ] Inline edit: base price, hourly rate, min hours
-- [ ] Toggle active/inactive per tier
-- [ ] Changes auto-update the quote form's price estimator
-- [ ] Save button with success toast notification
+- [x] Table of all pricing tiers (from `Pricing` table)
+- [x] Inline edit: base price, hourly rate, min hours
+- [x] Toggle active/inactive per tier
+- [x] Changes auto-update the quote form's price estimator
+- [x] Save button with success toast notification
 
 ### 4.8 — Analytics Page (`app/admin/analytics/page.tsx`)
 - [ ] Embedded Google Analytics GA4 iframe/link (or API data display)
