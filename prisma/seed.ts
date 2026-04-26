@@ -1,15 +1,17 @@
+import { config } from "dotenv";
+config({ path: ".env.local" });
+
 import { PrismaClient } from "../app/generated/prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaNeon } from "@prisma/adapter-neon";
 import bcrypt from "bcryptjs";
 
 const connectionString = process.env.DATABASE_URL!;
-const adapter = new PrismaPg({ connectionString });
+const adapter = new PrismaNeon({ connectionString });
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
   console.log("🌱 Seeding database...");
 
-  // --- Admin User ---
   const hashedPassword = await bcrypt.hash("Admin@2024!", 12);
   const admin = await prisma.admin.upsert({
     where: { email: "admin@kaneopromovers.com" },
@@ -23,7 +25,6 @@ async function main() {
   });
   console.log(`✅ Admin created: ${admin.email}`);
 
-  // --- Pricing Tiers ---
   const pricingTiers = [
     { label: "1 Bedroom Apartment", basePrice: 299, hourlyRate: 85, minHours: 2 },
     { label: "2 Bedroom Apartment", basePrice: 399, hourlyRate: 95, minHours: 3 },
@@ -39,20 +40,14 @@ async function main() {
   ];
 
   for (const tier of pricingTiers) {
-    const existing = await prisma.pricing.findFirst({
-      where: { label: tier.label },
-    });
+    const existing = await prisma.pricing.findFirst({ where: { label: tier.label } });
     if (existing) {
-      await prisma.pricing.update({
-        where: { id: existing.id },
-        data: tier,
-      });
+      await prisma.pricing.update({ where: { id: existing.id }, data: tier });
     } else {
       await prisma.pricing.create({ data: tier });
     }
   }
   console.log(`✅ ${pricingTiers.length} pricing tiers seeded`);
-
   console.log("🎉 Seeding complete!");
 }
 
