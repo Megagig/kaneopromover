@@ -22,7 +22,7 @@ BUSINESS INFO:
 - Cities: Airdrie AB (primary), Calgary AB, Crossfield AB, Carstairs AB, Chestermere AB, Cochrane AB, Okotoks AB, Olds AB (new)
 
 TECH STACK:
-- Next.js 14 App Router with TypeScript
+- Next.js 16 App Router with TypeScript
 - Tailwind CSS (mobile-first, responsive)
 - Prisma ORM + PostgreSQL
 - NextAuth.js (Credentials provider)
@@ -45,6 +45,7 @@ DESIGN SYSTEM (ClickHouse-inspired from getdesign.md/clickhouse):
 - Section padding: py-20 md:py-28
 - Max content width: max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
 - Animations: subtle fade-in, slide-up on scroll (framer-motion)
+- Follow the Design System in the #DESIGN.md on the root of this project
 
 GOLDEN RULES:
 1. MOBILE FIRST — every component starts with mobile styles, then md: and lg: breakpoints

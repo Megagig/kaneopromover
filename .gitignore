@@ -1,67 +1,43 @@
-# ------------------------------------
-# Node.js
-# ------------------------------------
-node_modules/
-npm-debug.log
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-package-lock.json
-yarn.lock
-.pnpm/
-.pnp.*
-.pnp.js
+.pnpm-debug.log*
 
-# ------------------------------------
-# Environment Variables
-# (Very important: NEVER commit .env)
-# ------------------------------------
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# env files (can opt-in for committing if needed)
+.env*
 
-# ------------------------------------
-# Logs
-# ------------------------------------
-logs/
-*.log
-logs/*.log
-logs/*.txt
-*.pid
-*.seed
-*.pid.lock
+# vercel
+.vercel
 
-# ------------------------------------
-# OS / System files
-# ------------------------------------
-.DS_Store
-Thumbs.db
-.fseventsd
-.idea/
-.vscode/
-*.swp
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
-# ------------------------------------
-# Build / Cache / Coverage
-# ------------------------------------
-dist/
-build/
-coverage/
-.cache/
-.nyc_output/
-.tmp/
-temp/
-
-# ------------------------------------
-# EJS cache (rare but safe to ignore)
-# ------------------------------------
-*.ejs.cache
-
-# ------------------------------------
-# Optional: Uploads / Storage Files
-# (If you store images locally in /uploads)
-# ------------------------------------
-uploads/
-storage/
+/app/generated/prisma
