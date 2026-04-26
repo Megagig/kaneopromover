@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description:
     "Learn about Kaneo Pro Movers — trusted movers in Airdrie and Calgary, AB. Licensed, insured, and committed to stress-free moving experiences.",
   alternates: { canonical: "https://www.kaneopromovers.com/about" },
+  openGraph: {
+    title: "About Kaneo Pro Movers | Airdrie & Calgary Moving Company",
+    description: "Learn about Kaneo Pro Movers — trusted movers in Airdrie and Calgary, AB.",
+    url: "https://www.kaneopromovers.com/about",
+    images: [{ url: "/images/about.jpg" }],
+  },
 };
 
 const stats = [

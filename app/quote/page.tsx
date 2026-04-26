@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     "Request a free quote from Kaneo Pro Movers. Serving Airdrie, Calgary, Crossfield, and all of Alberta. Instant estimate + same-day response.",
   alternates: { canonical: "https://www.kaneopromovers.com/quote" },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Get a Free Moving Quote | Kaneo Pro Movers",
+    description: "Request a free quote from Kaneo Pro Movers. Serving Airdrie, Calgary, and all of Alberta.",
+    url: "https://www.kaneopromovers.com/quote",
+  },
 };
 
 export default function QuotePage() {

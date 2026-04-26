@@ -62,6 +62,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.kaneopromovers.com",
   },
+  verification: {
+    google: "3f079748702b6260",
+  },
 };
 
 export default function RootLayout({

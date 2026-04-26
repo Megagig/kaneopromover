@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     "Professional moving services in Airdrie and Calgary. Residential, commercial, packing, loading, furniture, and long-distance moving. Get a free quote!",
   alternates: { canonical: "https://www.kaneopromovers.com/moving-services" },
+  openGraph: {
+    title: "Moving Services | Residential, Furniture & Local Movers | Kaneo Pro",
+    description: "Professional moving services in Airdrie and Calgary. Residential, commercial, packing, and more.",
+    url: "https://www.kaneopromovers.com/moving-services",
+  },
 };
 
 const services = [

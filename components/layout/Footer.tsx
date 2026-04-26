@@ -34,8 +34,28 @@ const locations = [
 ];
 
 export default function Footer() {
+  const napSchema = {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    name: "Kaneo Pro Movers",
+    telephone: "+15873785954",
+    email: "info@kaneopromovers.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1060 Channelside DR, SW",
+      addressLocality: "Airdrie",
+      addressRegion: "AB",
+      addressCountry: "CA",
+    },
+    url: "https://www.kaneopromovers.com",
+  };
+
   return (
     <footer className="bg-gray-900 dark:bg-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(napSchema) }}
+      />
       {/* Top Section */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-6">

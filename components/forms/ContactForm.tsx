@@ -39,6 +39,13 @@ export default function ContactForm() {
       if (!res.ok) throw new Error("Failed");
       setSuccess(true);
       reset();
+      // GA4 conversion tracking
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "contact_form_submitted", {
+          event_category: "conversion",
+          event_label: "contact_form_success",
+        });
+      }
     } catch {
       setError("Something went wrong. Please try again or call us directly.");
     } finally {

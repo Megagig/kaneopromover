@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { cities } from "@/lib/data/cityData";
+import { services } from "@/lib/data/serviceData";
 
 const BASE_URL = "https://www.kaneopromovers.com";
 
@@ -21,5 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.95,
   }));
 
-  return [...staticPages, ...cityPages];
+  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
+    url: `${BASE_URL}/moving-services/${s.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...cityPages, ...servicePages];
 }

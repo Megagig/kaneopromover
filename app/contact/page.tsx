@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     "Contact Kaneo Pro Movers for a free moving quote. Call +1(587)-378-5954 or email info@kaneopromovers.com. Serving Airdrie, Calgary, and Alberta.",
   alternates: { canonical: "https://www.kaneopromovers.com/contact" },
+  openGraph: {
+    title: "Contact Kaneo Pro Movers | Airdrie & Calgary Movers",
+    description: "Contact Kaneo Pro Movers for a free moving quote. Call +1(587)-378-5954.",
+    url: "https://www.kaneopromovers.com/contact",
+  },
 };
 
 const infoCards = [
