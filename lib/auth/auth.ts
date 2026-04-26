@@ -29,4 +29,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   ],
   session: { strategy: "jwt", maxAge: 24 * 60 * 60 },
   pages: { signIn: "/admin/login" },
+  callbacks: {
+    authorized({ auth: session, request }) {
+      const isAdmin = request.nextUrl.pathname.startsWith("/admin");
+      const isLogin = request.nextUrl.pathname === "/admin/login";
+      if (isAdmin && !isLogin && !session?.user) return false;
+      return true;
+    },
+  },
 });

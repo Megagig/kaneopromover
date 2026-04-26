@@ -601,19 +601,19 @@ enum BookingStatus {
 - [x] Configure NextAuth with Credentials provider in `lib/auth/auth.ts`
 - [x] Admin login validates against `Admin` table in DB (bcrypt password comparison)
 - [x] Session: JWT strategy, 24-hour expiry
-- [ ] Create `middleware.ts` to protect all `/admin/*` routes — redirect to `/admin/login` if not authenticated
+- [x] Create `middleware.ts` to protect all `/admin/*` routes — redirect to `/admin/login` if not authenticated
 - [x] Create seed script to create first admin: `npx prisma db seed`
 
 ### 4.2 — Admin Login Page (`app/admin/login/page.tsx`)
-- [ ] Standalone page (no TopBar/Navbar/Footer — just the admin login)
-- [ ] Centered card design: Kaneo Pro logo, email input, password input, "Sign In" button
-- [ ] Error messages for wrong credentials
-- [ ] Redirect to `/admin/dashboard` on success
-- [ ] "Back to website" link
+- [x] Standalone page (no TopBar/Navbar/Footer — just the admin login)
+- [x] Centered card design: Kaneo Pro logo, email input, password input, "Sign In" button
+- [x] Error messages for wrong credentials
+- [x] Redirect to `/admin/dashboard` on success
+- [x] "Back to website" link
 
 ### 4.3 — Admin Layout (`app/admin/layout.tsx`)
-- [ ] Auth guard: server-side session check, redirect if not authenticated
-- [ ] Sidebar navigation:
+- [x] Auth guard: server-side session check, redirect if not authenticated
+- [x] Sidebar navigation:
   - Dashboard (home icon)
   - Bookings (calendar icon)
   - Leads / Quotes (inbox icon)
@@ -622,7 +622,7 @@ enum BookingStatus {
   - Settings (gear icon)
   - Logout button (bottom of sidebar)
 - [ ] Top bar: "Admin Panel" breadcrumb + current admin name + dark mode toggle
-- [ ] Mobile: collapsible sidebar
+- [x] Mobile: collapsible sidebar
 
 ### 4.4 — Dashboard Page (`app/admin/dashboard/page.tsx`)
 **Stat Cards (top row):**
