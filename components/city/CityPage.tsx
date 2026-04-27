@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CheckCircle, Home, Building, Package, Truck } from "lucide-react";
 import type { CityData } from "@/lib/data/cityData";
 import { cities } from "@/lib/data/cityData";
+import GoogleReviews from "@/components/sections/GoogleReviews";
 
 const serviceCards = [
   { icon: Home, title: "Residential Moving", desc: "Full-service home moves for families and individuals. We handle everything from packing to setup." },
@@ -108,6 +109,9 @@ export default function CityPage({ cityData }: CityPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews */}
+      <GoogleReviews />
 
       {/* Nearby Cities */}
       {nearby.length > 0 && (

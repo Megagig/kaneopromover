@@ -105,6 +105,9 @@ export default function RootLayout({
             />
           </>
         )}
+
+        {/* Elfsight Google Reviews Widget */}
+        <script src="https://elfsightcdn.com/platform.js" async />
       </body>
     </html>
   );

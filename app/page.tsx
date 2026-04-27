@@ -5,6 +5,7 @@ import { Home, Building, Package, Truck, CheckCircle, Star, ThumbsUp, Users, Clo
 import HeroSlider from "@/components/sections/HeroSlider";
 import QuickQuoteWidget from "@/components/sections/QuickQuoteWidget";
 import FAQAccordion from "@/components/sections/FAQAccordion";
+import GoogleReviews from "@/components/sections/GoogleReviews";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import FAQSchema from "@/components/seo/FAQSchema";
 
@@ -45,12 +46,6 @@ const citiesList = [
   { name: "Cochrane", slug: "cochrane" },
   { name: "Okotoks", slug: "okotoks" },
   { name: "Olds", slug: "olds" },
-];
-
-const testimonials = [
-  { text: "Kaneo Pro Movers made our move from Calgary to Airdrie completely stress-free. The crew was on time, careful with our furniture, and incredibly friendly. Highly recommend!", name: "Sarah M.", city: "Airdrie, AB" },
-  { text: "Best moving experience we've ever had. Fair pricing, no hidden fees, and they even helped reassemble our beds. Will definitely use them again for our next move.", name: "James T.", city: "Calgary, AB" },
-  { text: "We needed a last-minute move and Kaneo Pro came through. They were available the next day and handled everything professionally. Five stars all the way!", name: "Priya K.", city: "Cochrane, AB" },
 ];
 
 const homeFaqs = [
@@ -225,38 +220,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Testimonials */}
-      <section className="border-t border-border bg-surface py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="font-display text-3xl font-bold text-text-primary md:text-4xl">
-              We Are 5-Star Moving Company
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-16 rounded bg-primary" />
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="rounded-lg border border-border bg-background p-6"
-              >
-                <div className="flex gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="mt-4 border-t border-border pt-4">
-                  <p className="font-semibold text-text-primary">{t.name}</p>
-                  <p className="text-xs text-text-muted">{t.city}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 7. Google Reviews */}
+      <GoogleReviews />
 
       {/* 8. FAQ */}
       <section className="py-20 md:py-28">
