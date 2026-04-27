@@ -45,10 +45,9 @@ export default function Footer() {
               <Image
                 src="/images/logo-dark.png"
                 alt="Kaneo Pro Movers"
-                width={120}
-                height={35}
-                className="h-9 w-auto"
-                style={{ width: "auto", height: "auto" }}
+                width={100}
+                height={30}
+                className="h-8 w-auto max-w-[100px] rounded-sm object-contain"
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-gray-400">

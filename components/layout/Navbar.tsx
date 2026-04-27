@@ -111,10 +111,9 @@ export default function Navbar() {
           <Image
             src={logoSrc}
             alt="Kaneo Pro Movers"
-            width={140}
-            height={40}
-            className="h-10 w-auto"
-            style={{ width: "auto", height: "auto" }}
+            width={120}
+            height={36}
+            className="h-8 w-auto max-w-[100px] rounded-sm object-contain sm:h-9 sm:max-w-[120px]"
             priority
           />
         </Link>
